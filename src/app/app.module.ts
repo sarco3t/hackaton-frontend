@@ -14,6 +14,7 @@ import { SupportComponent } from "./pages/support/support.component";
 import { RateComponent } from "./pages/rate/rate.component";
 import { FeedbackComponent } from "./pages/feedback/feedback.component";
 import { MapViewComponent } from "./pages/map-view/map-view.component";
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MapViewComponent } from "./pages/map-view/map-view.component";
     SupportComponent,
     RateComponent,
     FeedbackComponent,
-    MapViewComponent
+    MapViewComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
