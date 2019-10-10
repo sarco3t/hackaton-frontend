@@ -5,7 +5,7 @@ import { HomeComponent } from "./pages/home/home.component";
 
 const routes: Routes = [
   {
-    path: "/",
+    path: "",
     component: HomeComponent
   }
 ];
@@ -14,4 +14,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule {}
