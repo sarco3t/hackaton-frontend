@@ -8,7 +8,9 @@ import { MapViewComponent } from "./pages/map-view/map-view.component";
 import { AboutComponent } from "./pages/about/about.component";
 import { SupportComponent } from "./pages/support/support.component";
 import { RateComponent } from "./pages/rate/rate.component";
+
 import { ApplicationsComponent } from "./pages/applications/applications.component";
+import { ApplicationComponent } from "./pages/application/application.component";
 
 const routes: Routes = [
   {
@@ -40,8 +42,14 @@ const routes: Routes = [
     component: RateComponent
   },
   {
+
     path: "applications",
     component: ApplicationsComponent
+  },
+  {
+
+    path: "application",
+    component: ApplicationComponent
   }
 ];
 

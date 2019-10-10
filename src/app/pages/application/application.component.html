@@ -1,0 +1,24 @@
+<div class="container p-3">
+    <div class="row">
+        <div class="col-md-2"></div> 
+        <div class="col-md-8">
+            <form action="" [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+                <h5>Тема</h5>
+                <input type="text" formControlName="theme"/>
+                
+                <h5>Опис</h5>
+                <textarea formControlName="description"  cols="30" rows="10"></textarea>
+                
+                <h5>Фото</h5>
+                <input type="file" (change)="onFileSelect($event)">
+                <h5>Локація</h5>
+    
+                <div style="height: 70vh;" leaflet [leafletOptions]="options" [leafletLayers]="layers"  (leafletClick)="onMapClick($event)"></div>
+    
+                <button type="submit"  class="btn btn-success mt-3">Відправити</button>
+            </form>
+            
+        </div> 
+        <div class="col-md-2"></div> 
+    </div>
+</div>
