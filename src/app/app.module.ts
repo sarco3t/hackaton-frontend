@@ -8,9 +8,13 @@ import { HomeComponent } from "./pages/home/home.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { NavbarComponent } from './navbar/navbar.component';
 import { MapViewComponent } from './map-view/map-view.component';
+import { AboutComponent } from './pages/about/about.component';
+import { SupportComponent } from './pages/support/support.component';
+import { RateComponent } from './pages/rate/rate.component';
+import { FeedbackComponent } from './pages/feedback/feedback.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavbarComponent, MapViewComponent, LoginComponent],
+  declarations: [AppComponent, HomeComponent, NavbarComponent, MapViewComponent, LoginComponent, AboutComponent, SupportComponent, RateComponent, FeedbackComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent]
