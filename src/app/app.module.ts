@@ -35,7 +35,7 @@ import { ApplicationsComponent } from './pages/applications/applications.compone
     FeedbackComponent,
     MapViewComponent,
     RegisterComponent,
-
+    ApplicationComponent,
 
     ApplicationsComponent
 
