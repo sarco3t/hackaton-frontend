@@ -15,6 +15,8 @@ import { RateComponent } from "./pages/rate/rate.component";
 import { FeedbackComponent } from "./pages/feedback/feedback.component";
 import { MapViewComponent } from "./pages/map-view/map-view.component";
 import { RegisterComponent } from './pages/register/register.component';
+import { ApplicationComponent } from './pages/application/application.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,13 +29,16 @@ import { RegisterComponent } from './pages/register/register.component';
     RateComponent,
     FeedbackComponent,
     MapViewComponent,
-    RegisterComponent
+    RegisterComponent,
+    ApplicationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    LeafletModule
+    LeafletModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
