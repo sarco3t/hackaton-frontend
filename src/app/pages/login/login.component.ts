@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.showLogin = true;
-    console.log('this.showLogin',this.showLogin);
+    
   }
 
 }
