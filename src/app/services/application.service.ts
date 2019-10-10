@@ -11,4 +11,7 @@ export class ApplicationService {
   applications() {
     return this.http.get(env.apiUrl + "application");
   }
+  userApplications(userId) {
+    return this.http.get(env.apiUrl + `application?userId=${userId}`);
+  }
 }

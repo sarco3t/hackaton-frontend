@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { UserService } from "../../user.service";
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder } from "@angular/forms";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-register",
@@ -12,18 +13,17 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {
     this.registerForm = this.formBuilder.group({
       login: "",
       password: "",
       address: "",
-      name: this.formBuilder.group(
-        {
-          first: "",
-          last: ""
-        }
-      ),
+      name: this.formBuilder.group({
+        first: "",
+        last: ""
+      }),
       // passwordConfirmation: "",
       phoneNumber: ""
     });
@@ -31,13 +31,15 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit(formValue: Object) {
-    this.userService.registerUser({
-      role: "user",
-      ...formValue
-    }).subscribe((data: any) => {
-      console.log(data)
-      this.registerForm.reset();
-    });
-    
+    this.userService
+      .registerUser({
+        role: "user",
+        ...formValue
+      })
+      .subscribe((data: any) => {
+        console.log(data);
+        this.router.navigateByUrl("/applications");
+        this.registerForm.reset();
+      });
   }
 }

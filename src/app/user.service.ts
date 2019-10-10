@@ -5,6 +5,7 @@ import { of } from "rxjs";
 import { environment as env } from "src/environments/environment";
 
 export const AUTH_TOKEN_KEY = "auth_token";
+export const USER_KEY = "user_data";
 @Injectable({
   providedIn: "root"
 })
@@ -14,6 +15,7 @@ export class UserService {
   registerUser(data: Object) {
     return this.http
       .post(env.apiUrl + "register", data)
+      .pipe(tap(this.setSession))
       .pipe(catchError(val => of(`I caught: ${val}`)));
   }
 
@@ -24,12 +26,16 @@ export class UserService {
       .pipe(catchError(val => of(`I caught: ${val}`)));
   }
 
+  userData() {}
+
   setSession(authResult) {
     console.log("authResult :", authResult);
     localStorage.setItem(AUTH_TOKEN_KEY, authResult.token);
+    localStorage.setItem(USER_KEY, authResult.user);
   }
   logout() {
     localStorage.removeItem(AUTH_TOKEN_KEY);
+    localStorage.removeItem(USER_KEY);
   }
 
   isLogged(): boolean {
