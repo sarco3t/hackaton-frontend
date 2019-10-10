@@ -119,7 +119,7 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/cli@~8.3.8":
+"@angular/cli@^8.3.8":
   version "8.3.8"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-8.3.8.tgz#a3b1a4ab1822469f3013ca744e6d4a5818322cbe"
   integrity sha512-JmumKB21XKyQwe3fSeaaEGTWuv39mtrNQ4CWIXzLKY+oWdpBy+G82JRjXM3OMLmKGrmxiAjTc6kP0oRYaq25JA==
@@ -151,7 +151,7 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/compiler-cli@~8.2.9":
+"@angular/compiler-cli@^8.2.10":
   version "8.2.10"
   resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-8.2.10.tgz#2de5da046db72679f373a06bb8f764179027a25f"
   integrity sha512-3oM9y6vr/4qcN9DXkggdRXMLbdIZJ98YKYhVxhachNgMt+l4kkofP2JMLbmzgL4tVghevoWXeeY+6MB8gYVUZQ==

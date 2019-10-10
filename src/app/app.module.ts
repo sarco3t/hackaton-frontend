@@ -17,6 +17,7 @@ import { MapViewComponent } from "./pages/map-view/map-view.component";
 import { RegisterComponent } from "./pages/register/register.component";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { AuthInterceptor } from './auth-interceptor';
+import { ApplicationsComponent } from './pages/applications/applications.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AuthInterceptor } from './auth-interceptor';
     RateComponent,
     FeedbackComponent,
     MapViewComponent,
-    RegisterComponent
+    RegisterComponent,
+    ApplicationsComponent
   ],
   imports: [
     BrowserModule,
