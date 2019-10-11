@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { tileLayer, latLng, marker } from "leaflet";
+import { ApplicationService } from "src/app/services/application.service";
 @Component({
   selector: 'app-application',
   templateUrl: './application.component.html',
@@ -9,13 +10,15 @@ import { tileLayer, latLng, marker } from "leaflet";
 export class ApplicationComponent implements OnInit {
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private appService: ApplicationService
   ) { }
   options;
   layers: Array<any>;
   latlng;
   imageBase64;
   checkoutForm;
+  error: string;
 
   ngOnInit() {
     this.checkoutForm = this.formBuilder.group({
@@ -51,9 +54,9 @@ export class ApplicationComponent implements OnInit {
     if (e.target.files.length) {
       const reader = new FileReader();
         reader.onload = ev => {
-          if (ev.target.result) {
-            ev.target.result // base64 image represantation
-            this.imageBase64 = ev.target.result;
+          if (reader.result) {
+            reader.result // base64 image represantation
+            this.imageBase64 = reader.result;
           }
         };
         reader.readAsDataURL(e.target.files[0]);
@@ -61,9 +64,22 @@ export class ApplicationComponent implements OnInit {
   }
   onSubmit(formData) {
     console.log('formData', formData);
-
-    
-    this.checkoutForm.reset();
+    let data = {
+      title: formData.theme,
+      description: formData.description,
+      location: [this.latlng.lat, this.latlng.lng],
+      photo: this.imageBase64
+    }
+    this.appService.createApplication(data).subscribe(
+      (data: any) => {
+        
+      },
+      err => {
+        console.log(err);
+        this.error = err.error.message;
+      }
+    );
+    //this.checkoutForm.reset();
   }
 
 }
