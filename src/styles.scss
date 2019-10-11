@@ -6,6 +6,13 @@
   height: 91vh;
   background-size: cover;
   background-position-y: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  .brand {
+    font-family: "Roboto", sans-serif;
+    font-size: 10em;
+  }
 }
 .navbar {
   height: 7vh;
