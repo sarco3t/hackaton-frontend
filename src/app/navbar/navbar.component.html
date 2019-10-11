@@ -1,9 +1,17 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-warning pt-0">
   <a class="navbar-brand" style="color: white;" href="#"></a>
-  <button class="navbar-toggler" type="button" (click)="togglerClick()" [ngClass]="{'collapsed': menu }">
+  <button
+    class="navbar-toggler"
+    type="button"
+    (click)="togglerClick()"
+    [ngClass]="{ collapsed: menu }"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" [ngClass]="{'show': menu, 'bg-warning': menu }">
+  <div
+    class="collapse navbar-collapse"
+    [ngClass]="{ show: menu, 'bg-warning': menu }"
+  >
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a
@@ -59,6 +67,9 @@
           [routerLinkActive]="['active']"
           >Підтримка</a
         >
+      </li>
+      <li class="nav-item" *ngIf="logged">
+        <a class="nav-link" href="#" (click)="logout()">Вихід</a>
       </li>
     </ul>
     <!-- <form class="form-inline mt-2 mt-md-0">

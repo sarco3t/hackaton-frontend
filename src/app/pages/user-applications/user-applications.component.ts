@@ -8,7 +8,7 @@ import { ApplicationService } from "src/app/services/application.service";
 })
 export class UserApplicationsComponent implements OnInit {
   constructor(private appService: ApplicationService) {
-    this.applications = [{}, {}, {}];
+    this.applications = [];
   }
   applications: Array<any>;
   ngOnInit() {

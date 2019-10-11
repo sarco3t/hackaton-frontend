@@ -31,9 +31,12 @@ export class ApplicationsComponent implements OnInit {
         this.markers = this.applications.map((app: any) => {
           const cords = app.location;
           return marker([cords[0], cords[1]], {
-            iconUrl: "leaflet/marker-icon.png",
-            shadowUrl: "leaflet/marker-shadow.png"
-          });
+            iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
+            iconUrl: require("leaflet/dist/images/marker-icon.png"),
+            shadowUrl: require("leaflet/dist/images/marker-shadow.png")
+          })
+            .on("click", () => {})
+            .bindPopup(`<div><p>${app.title}</p><p>${app.description}</p></div>`);
         });
       },
       err => {
