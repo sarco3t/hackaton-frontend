@@ -2,16 +2,28 @@
 @import "bootstrap";
 @import "leaflet/dist/leaflet.css";
 .cover {
-  background: url(./assets/home.jpg);
-  height: 94vh;
+  background: url(./assets/home.jpeg);
+  height: 91vh;
   background-size: cover;
   background-position-y: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  .brand {
+    font-family: "Roboto", sans-serif;
+    font-size: 10em;
+  }
 }
 .navbar {
-  height: 6vh;
+  height: 7vh;
+  font-size: 1.25em;
   .navbar-nav {
     .nav-link {
       color: rgba(0, 0, 0, 0.5);
     }
   }
+}
+.navbar-brand {
+  font-size: 1.5em;
+  font-family: "Roboto", sans-serif;
 }
