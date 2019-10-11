@@ -51,10 +51,11 @@ export class ApplicationComponent implements OnInit {
     if (e.target.files.length) {
       const reader = new FileReader();
         reader.onload = ev => {
-          if (ev.target.result) {
-            ev.target.result // base64 image represantation
-            this.imageBase64 = ev.target.result;
-          }
+          console.log('ev :', ev);
+          // if (ev.target.result) {
+          //   ev.target.result // base64 image represantation
+          //   this.imageBase64 = ev.target.result;
+          // }
         };
         reader.readAsDataURL(e.target.files[0]);
     }

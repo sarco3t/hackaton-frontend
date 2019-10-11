@@ -26,12 +26,14 @@ export class UserService {
       .pipe(catchError(val => of(`I caught: ${val}`)));
   }
 
-  userData() {}
+  userData(): any {
+    return JSON.parse(localStorage.getItem(USER_KEY));
+  }
 
   setSession(authResult) {
     console.log("authResult :", authResult);
     localStorage.setItem(AUTH_TOKEN_KEY, authResult.token);
-    localStorage.setItem(USER_KEY, authResult.user);
+    localStorage.setItem(USER_KEY, JSON.stringify(authResult.user));
   }
   logout() {
     localStorage.removeItem(AUTH_TOKEN_KEY);

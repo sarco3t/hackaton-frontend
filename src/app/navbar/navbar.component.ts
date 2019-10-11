@@ -9,11 +9,14 @@ import { UserService } from '../user.service';
 export class NavbarComponent implements OnInit {
 
   constructor(private userService: UserService) { }
-
+  menu: boolean;
   ngOnInit() {
   }
 
   get logged(): boolean {
     return this.userService.isLogged();
+  }
+  togglerClick() {
+    this.menu = !this.menu;
   }
 }

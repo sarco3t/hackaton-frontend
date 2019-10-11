@@ -14,9 +14,9 @@ export class AuthInterceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    if (localStorage.getItem('access-token') != null) {
-      const token = localStorage.getItem('access-token');// if the token is  stored in localstorage add it to http headerconst headers = new HttpHeaders().set("access-token", token);   //clone http to the custom AuthRequest and send it to the server 
-      const headers = new HttpHeaders().set("Authorization", token);
+    if (localStorage.getItem('auth_token') != null) {
+      const token = localStorage.getItem('auth_token');// if the token is  stored in localstorage add it to http headerconst headers = new HttpHeaders().set("access-token", token);   //clone http to the custom AuthRequest and send it to the server 
+      const headers = new HttpHeaders().set("Authorization", 'Bearer ' + token);
       const AuthRequest = request.clone({ headers: headers });
       return next.handle(AuthRequest)
     } else {

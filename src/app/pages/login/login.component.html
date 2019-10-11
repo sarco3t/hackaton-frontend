@@ -20,7 +20,8 @@
                 class="form-control"
                 formControlName="password"
               />
+              <small *ngIf="error" class='text-danger'>{{ error }}</small>
             </div>
-        <button type="submit" class="btn btn-warning">Ввійти</button>
+        <button type="submit" class="btn btn-warning text-white">Ввійти</button>
         </form>
 </div>

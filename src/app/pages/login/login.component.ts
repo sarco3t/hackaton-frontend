@@ -22,17 +22,22 @@ export class LoginComponent implements OnInit {
 
   loginForm;
   ngOnInit() {}
-
+  error: string;
   get logged(): boolean {
     return this.userService.isLogged();
   }
 
   onSubmit(formValue) {
-    console.log("login");
-    this.userService.loginUser(formValue).subscribe(data => {
-      console.log("data :", data);
-      this.loginForm.reset();
-      this.router.navigateByUrl("/applications");
-    });
+    this.error = ''
+    this.userService.loginUser(formValue).subscribe(
+      data => {
+        if (data.user) {
+          this.loginForm.reset();
+          this.router.navigateByUrl("/applications");
+          return
+        }
+        this.error = "Хибний логін або пароль"
+      }
+    );
   }
 }

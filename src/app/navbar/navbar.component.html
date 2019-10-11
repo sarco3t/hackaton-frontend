@@ -1,9 +1,9 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-warning">
+<nav class="navbar navbar-expand-md navbar-dark bg-warning pt-0">
   <a class="navbar-brand" style="color: white;" href="#"></a>
-  <button class="navbar-toggler" type="button">
+  <button class="navbar-toggler" type="button" (click)="togglerClick()" [ngClass]="{'collapsed': menu }">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse">
+  <div class="collapse navbar-collapse" [ngClass]="{'show': menu, 'bg-warning': menu }">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a
@@ -21,6 +21,15 @@
           [routerLink]="['/applications']"
           [routerLinkActive]="['active']"
           >Карта</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          href="#"
+          [routerLink]="['/user-applications']"
+          [routerLinkActive]="['active']"
+          >Заяви</a
         >
       </li>
       <li class="nav-item">

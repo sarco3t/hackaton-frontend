@@ -11,7 +11,7 @@ export class ApplicationsComponent implements OnInit {
   applications: Array<Object>;
   error: string;
   options;
-  markers;
+  markers: Array<any> = [];
   constructor(private appService: ApplicationService) {}
   ngOnInit() {
     this.options = {
@@ -28,9 +28,12 @@ export class ApplicationsComponent implements OnInit {
     this.appService.applications().subscribe(
       (data: any) => {
         this.applications = data.model;
-        this.applications.forEach((app: any) => {
-          const cords = app.coordinates;
-          this.markers.push(marker([cords[0], cords[1]]));
+        this.markers = this.applications.map((app: any) => {
+          const cords = app.location;
+          return marker([cords[0], cords[1]], {
+            iconUrl: "leaflet/marker-icon.png",
+            shadowUrl: "leaflet/marker-shadow.png"
+          });
         });
       },
       err => {

@@ -1,10 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap";
-@import 'leaflet/dist/leaflet.css';
+@import "leaflet/dist/leaflet.css";
 .cover {
   background: url(./assets/home.jpeg);
   height: 94vh;
+  background-size: cover;
 }
 .navbar {
   height: 6vh;
+  .navbar-nav {
+    .nav-link {
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
 }

@@ -11,6 +11,8 @@ import { RateComponent } from "./pages/rate/rate.component";
 
 import { ApplicationsComponent } from "./pages/applications/applications.component";
 import { ApplicationComponent } from "./pages/application/application.component";
+import { UserApplicationsComponent } from "./pages/user-applications/user-applications.component";
+import { AuthGuard } from "./guards/auth-guard.service";
 
 const routes: Routes = [
   {
@@ -42,14 +44,17 @@ const routes: Routes = [
     component: RateComponent
   },
   {
-
     path: "applications",
     component: ApplicationsComponent
   },
   {
-
     path: "application",
     component: ApplicationComponent
+  },
+  {
+    path: "user-applications",
+    component: UserApplicationsComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

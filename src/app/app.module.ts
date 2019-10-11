@@ -21,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AuthInterceptor } from './auth-interceptor';
 import { ApplicationsComponent } from './pages/applications/applications.component';
+import { UserApplicationsComponent } from './pages/user-applications/user-applications.component';
 
 
 @NgModule({
@@ -37,7 +38,9 @@ import { ApplicationsComponent } from './pages/applications/applications.compone
     RegisterComponent,
     ApplicationComponent,
 
-    ApplicationsComponent
+    ApplicationsComponent,
+
+    UserApplicationsComponent
 
   ],
   imports: [
