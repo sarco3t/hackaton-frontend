@@ -35,9 +35,22 @@
         <a
           class="nav-link"
           href="#"
+          *ngIf="logged"
           [routerLink]="['/user-applications']"
           [routerLinkActive]="['active']"
-          >Заяви</a
+        >
+          Мої Заяви</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          href="#"
+          *ngIf="logged"
+          [routerLink]="['/application']"
+          [routerLinkActive]="['active']"
+        >
+          Додати</a
         >
       </li>
       <li class="nav-item">

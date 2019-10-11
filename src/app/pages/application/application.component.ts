@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { tileLayer, latLng, marker } from "leaflet";
 import { ApplicationService } from "src/app/services/application.service";
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-application',
   templateUrl: './application.component.html',
@@ -11,7 +12,8 @@ export class ApplicationComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private appService: ApplicationService
+    private appService: ApplicationService,
+    private router: Router
   ) { }
   options;
   layers: Array<any>;
@@ -72,7 +74,7 @@ export class ApplicationComponent implements OnInit {
     }
     this.appService.createApplication(data).subscribe(
       (data: any) => {
-        
+        this.router.navigate(['/applications'])
       },
       err => {
         console.log(err);
