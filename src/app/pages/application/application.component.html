@@ -8,12 +8,12 @@
         (ngSubmit)="onSubmit(checkoutForm.value)"
       >
         <div class="form-group">
-          <label class="col-form-label">Тема</label>
+          <h5>Тема</h5>
           <input type="text" formControlName="theme" class="form-control" />
         </div>
 
         <div class="form-group">
-          <label>Опис</label>
+          <h5>Опис</h5>
           <textarea
             formControlName="description"
             cols="30"
@@ -34,7 +34,9 @@
           (leafletClick)="onMapClick($event)"
         ></div>
 
-        <button type="submit" class="btn btn-warning text-white mt-3">Відправити</button>
+        <button type="submit" class="btn btn-warning text-white mt-3">
+          Відправити
+        </button>
       </form>
     </div>
     <div class="col-md-2"></div>

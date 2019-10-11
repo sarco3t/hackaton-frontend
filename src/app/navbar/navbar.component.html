@@ -77,15 +77,15 @@
           >Підтримка</a
         >
       </li>
-      <li class="nav-item" *ngIf="logged">
-        <a class="nav-link" href="#" (click)="logout()">Вихід</a>
-      </li>
+
+      <li class="nav-item" *ngIf="logged"></li>
     </ul>
-    <!-- <form class="form-inline mt-2 mt-md-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Пошук" />
+    <form class="form-inline mt-2 mt-md-0">
+      <a class="nav-link text-white" href="#" (click)="logout()">Вихід</a>
+      <!-- <input class="form-control mr-sm-2" type="text" placeholder="Пошук" />
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
         Знайти
-      </button>
-    </form> -->
+      </button> -->
+    </form>
   </div>
 </nav>
