@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ApplicationService } from "src/app/services/application.service";
 import { tileLayer, latLng, marker } from "leaflet";
-
+declare function require(name: string);
 @Component({
   selector: "app-applications",
   templateUrl: "./applications.component.html",
@@ -36,7 +36,9 @@ export class ApplicationsComponent implements OnInit {
             shadowUrl: require("leaflet/dist/images/marker-shadow.png")
           })
             .on("click", () => {})
-            .bindPopup(`<div><p>${app.title}</p><p>${app.description}</p></div>`);
+            .bindPopup(
+              `<div><p>${app.title}</p><p>${app.description}</p></div>`
+            );
         });
       },
       err => {
