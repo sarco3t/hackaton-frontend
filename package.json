@@ -27,7 +27,7 @@
     "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "igniteui-angular-wrappers": "^8.0.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "leaflet": "^1.5.1",
     "ngx-openlayers": "^0.8.22",
     "ol": "^6.0.1",
