@@ -24,7 +24,7 @@
     "@asymmetrik/ngx-leaflet": "^6.0.1",
     "@ng-bootstrap/ng-bootstrap": "^5.1.1",
     "bootstrap": "^4.3.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "font-awesome": "^4.7.0",
     "igniteui-angular-wrappers": "^8.0.1",
     "jquery": "^3.4.1",
